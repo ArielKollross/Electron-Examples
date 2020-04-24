@@ -2,8 +2,7 @@ const request = require('request');
 
 const apiLink = 'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand'
 
-
-const getApiJson = request(apiLink, (err, response, body) => {
+request(apiLink, (err, response, body) => {
     body = JSON.parse(body)
     let randomQuote = body[0].content.rendered
 
